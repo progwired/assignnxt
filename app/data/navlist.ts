@@ -7,4 +7,8 @@ export const navlist = [
     label: "Issues",
     href: "/issues",
   },
+  {
+    label: "Users",
+    href: "/users",
+  },
 ];

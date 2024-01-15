@@ -6,6 +6,7 @@ import "md-editor-rt/lib/style.css";
 import { Controller, useForm } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { NextResponse } from "next/server";
 
 export interface IssueForm {
   title: string;
@@ -25,9 +26,12 @@ const NewIssuePage = () => {
           title: content.title,
           description: issueDescription,
         };
-        console.log(data);
-        await axios.post("/api/issues", data);
-        router.push("/issues");
+        try {
+          await axios.post("/api/issues", data);
+          router.push("/issues");
+        } catch (error) {
+          NextResponse.json({ error }, { status: 500 });
+        }
       })}
     >
       <TextField.Root>

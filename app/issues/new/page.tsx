@@ -1,28 +1,53 @@
 "use client";
 import React, { useState } from "react";
-import { Button, TextArea, TextField } from "@radix-ui/themes";
+import { Button, TextField } from "@radix-ui/themes";
 import { MdEditor } from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
-// import SimpleMDE from "react-simplemde-editor";
-// import "easymde/dist/easymde.min.css";
+import { Controller, useForm } from "react-hook-form";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+
+export interface IssueForm {
+  title: string;
+  description: string;
+}
 
 const NewIssuePage = () => {
-  const [issue, setIssue] = useState("");
+  const router = useRouter();
+  const [issueDescription, setIssueDescription] = useState("");
+  const { register, control, handleSubmit } = useForm<IssueForm>();
+
   return (
-    <div className="space-y-3">
+    <form
+      className="space-y-3"
+      onSubmit={handleSubmit(async (content) => {
+        const data = {
+          title: content.title,
+          description: issueDescription,
+        };
+        console.log(data);
+        await axios.post("/api/issues", data);
+        router.push("/issues");
+      })}
+    >
       <TextField.Root>
-        <TextField.Input placeholder="Title" />
+        <TextField.Input placeholder="Title" {...register("title")} />
       </TextField.Root>
-      {/* <SimpleMDE placeholder="Description" /> */}
-      {/* <TextArea placeholder="Description"></TextArea> */}
-      <MdEditor
-        modelValue={issue}
-        onChange={setIssue}
-        language="en-US"
-        placeholder="Description"
-      ></MdEditor>
+      <Controller
+        name="description"
+        control={control}
+        render={({ field }) => (
+          <MdEditor
+            modelValue={issueDescription}
+            onChange={setIssueDescription}
+            language="en-US"
+            placeholder="Description"
+          />
+        )}
+      />
+
       <Button>Submit New Issue</Button>
-    </div>
+    </form>
   );
 };
 

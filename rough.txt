@@ -1,0 +1,7 @@
+
+npm i md-editor-rt @codemirror/lang-markdown @codemirror/language-data @types/markdown-it @vavt/util codemirror copy-to-clipboard lru-cache markdown-it markdown-it-image-figures markdown-it-task-lists medium-zoom punycode
+
+npm i -D @babel/core @babel/preset-react @types/katex @types/multiparty @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @vavt/markdown-theme @vavt/vite-plugin-import-markdown @vitejs/plugin-react axios cropperjs eslint-plugin-react eslint-plugin-react-hooks highlight.js katex less mermaid multiparty prettier screenfull tsx vite vite-plugin-dts
+
+npm i --save-dev prisma@latest
+npm i @prisma/client@latest

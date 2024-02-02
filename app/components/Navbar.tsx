@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="flex border-b py-4">
       <div className="flex flex-1 px-4 items-center text-2xl">
         <Link href="/">
-          <MdAssistant />
+          <span className="text-2xl">PROGWIRED</span>
         </Link>
       </div>
       <ul className="flex space-x-4  px-4">

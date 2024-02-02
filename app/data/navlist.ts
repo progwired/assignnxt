@@ -12,8 +12,8 @@ const navlist = [
     sidenavlist: null,
   },
   {
-    label: "Users",
-    href: "/users",
+    label: "Login",
+    href: "/login",
     sidenavlist: null,
   },
 ];

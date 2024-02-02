@@ -1,3 +1,5 @@
+import jsAdvantages from "./js/advantages";
+import jsHistory from "./js/history";
 import jsName from "./js/name";
 import jsPurpose from "./js/purpose";
 
@@ -28,6 +30,20 @@ const sidenavlist_js = [
     label: "purpose",
     href: "/js/purpose",
     data: jsPurpose,
+  },
+  {
+    id: "js-history",
+    segment: "js",
+    label: "history",
+    href: "/js/history",
+    data: jsHistory,
+  },
+  {
+    id: "js-advantages",
+    segment: "js",
+    label: "advantages",
+    href: "/js/advantages",
+    data: jsAdvantages,
   },
 ];
 

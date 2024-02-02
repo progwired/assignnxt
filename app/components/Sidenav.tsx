@@ -9,7 +9,7 @@ function Sidenav() {
         {sidenavlist_js.map((each) => (
           <li key={each.id}>
             <Link href={each.href} className="px-4 py-2 flex border-b">
-              {each.label}
+              <span style="font-case: ">{each.label}</span>
             </Link>
           </li>
         ))}

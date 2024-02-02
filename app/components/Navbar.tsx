@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React from "react";
 import navlist from "../data/navlist";
-import { MdAssistant } from "react-icons/md";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -10,8 +9,8 @@ const Navbar = () => {
   return (
     <nav className="flex border-b py-4">
       <div className="flex flex-1 px-4 items-center text-2xl">
-        <Link href="/">
-          <span className="text-2xl">PROGWIRED</span>
+        <Link href="/" className="text-2xl">
+          PROGWIRED
         </Link>
       </div>
       <ul className="flex space-x-4  px-4">

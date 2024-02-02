@@ -29,7 +29,6 @@ export default function RootLayout({
         <Theme appearance="light" accentColor="blue">
           <Navbar />
           <div className="flex">
-            <Sidenav />
             <main className="p-4 flex-1">{children}</main>
           </div>
           {/* <ThemePanel /> */}

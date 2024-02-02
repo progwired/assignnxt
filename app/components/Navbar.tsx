@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { navlist } from "./data/navlist";
+import navlist from "../data/navlist";
 import { MdAssistant } from "react-icons/md";
 import { usePathname } from "next/navigation";
 

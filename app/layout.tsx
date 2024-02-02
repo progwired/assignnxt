@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./theme-config.css";
 import "./globals.css";
-import Navbar from "./Navbar";
-import { Theme, ThemePanel } from "@radix-ui/themes";
+import Navbar from "./components/Navbar";
+import { Theme } from "@radix-ui/themes";
+import Sidenav from "./components/Sidenav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +28,10 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <Theme appearance="light" accentColor="blue">
           <Navbar />
-          <main className="p-4">{children}</main>
+          <div className="flex">
+            <Sidenav />
+            <main className="p-4">{children}</main>
+          </div>
           {/* <ThemePanel /> */}
         </Theme>
       </body>

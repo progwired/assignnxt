@@ -30,6 +30,7 @@ const NewIssuePage = () => {
           await axios.post("/api/issues", data);
           router.push("/issues");
         } catch (error) {
+          console.log(error);
           NextResponse.json({ error }, { status: 500 });
         }
       })}

@@ -1,14 +1,21 @@
-export const navlist = [
+import sidenavlist_js from "./sidenavlist_js";
+
+const navlist = [
   {
-    label: "Dashboard",
-    href: "/dashboard",
+    label: "JavaScript",
+    href: "/js",
+    sidenavlist: sidenavlist_js,
   },
   {
     label: "Issues",
     href: "/issues",
+    sidenavlist: null,
   },
   {
     label: "Users",
     href: "/users",
+    sidenavlist: null,
   },
 ];
+
+export default navlist;

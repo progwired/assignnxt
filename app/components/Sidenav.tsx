@@ -5,12 +5,12 @@ import Link from "next/link";
 function Sidenav() {
   return (
     <div>
-      <ul className="mt-2">
+      <ul>
         {sidenavlist_js.map((each) => (
           <li key={each.id}>
             <Link
               href={each.href}
-              className="px-4 py-2 flex border-b capitalize"
+              className="px-4 py-2 flex border-b border-r capitalize"
             >
               {each.label}
             </Link>

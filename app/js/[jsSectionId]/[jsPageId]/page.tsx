@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import type { Metadata } from "next";
 import sidenavlist_js from "@/app/data/sidenavlist_js";
@@ -8,18 +7,18 @@ export type ParamProps = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-// export const generateMetadata = async ({
-//   params,
-// }: Props): Promise<Metadata> => {
-//   const title = await new Promise((resolve) => {
-//     setTimeout(() => {
-//       return resolve(params.jsPageId);
-//     }, 100);
-//   });
-//   return {
-//     title: `JavaScript-${title}`,
-//   };
-// };
+export const generateMetadata = async ({
+  params,
+}: ParamProps): Promise<Metadata> => {
+  const title = await new Promise((resolve) => {
+    setTimeout(() => {
+      return resolve(params.jsPageId);
+    }, 100);
+  });
+  return {
+    title: `JavaScript-${title}`,
+  };
+};
 
 function JsPage({ params, searchParams }: ParamProps) {
   // filtering data

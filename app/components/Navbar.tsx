@@ -9,14 +9,14 @@ const Navbar = () => {
   return (
     <nav className="flex border-b py-4">
       <div className="flex flex-1 px-4 items-center text-2xl">
-        <a href="/" className="text-2xl">
+        <Link href="/" className="text-2xl">
           PROGWIRED
-        </a>
+        </Link>
       </div>
       <ul className="flex space-x-4  px-4">
         {navlist.map((each) => (
           <li key={each.href}>
-            <Link
+            <a
               href={each.href}
               className={`hover:text-blue-900 transition-colors ${
                 pathName === each.href
@@ -25,7 +25,7 @@ const Navbar = () => {
               }`}
             >
               {each.label}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>

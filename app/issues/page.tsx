@@ -6,7 +6,7 @@ import Link from "next/link";
 const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
   return (
-    <div>
+    <main className="p-4">
       <h1>Issues Page: </h1>
       <div className="flex flex-col mb-4">
         {issues.map((each) => (
@@ -19,7 +19,7 @@ const IssuesPage = async () => {
       <Button>
         <Link href="/issues/new">New Issue</Link>
       </Button>
-    </div>
+    </main>
   );
 };
 

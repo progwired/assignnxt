@@ -24,13 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full bg-white">
+    <html lang="en" className="h-full bg-white light">
       <body className="h-full">
         <Theme appearance="light" accentColor="blue">
           <Navbar />
-          <div className="flex">
-            <main className="p-4 flex-1">{children}</main>
-          </div>
+          <main className="flex-1">{children}</main>
           {/* <ThemePanel /> */}
         </Theme>
       </body>

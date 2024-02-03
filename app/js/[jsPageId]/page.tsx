@@ -1,26 +1,31 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { JsPageProps } from "../page";
-import sidenavlist_js, { SidenavDataProps } from "@/app/data/sidenavlist_js";
+import React from "react";
+import type { Metadata, ResolvingMetadata } from "next";
+import sidenavlist_js from "@/app/data/sidenavlist_js";
 
-const DetailsPage = ({ params }: { params: JsPageProps }) => {
-  //setting data into local state
-  const [data, setData] = useState<SidenavDataProps>();
+type Props = {
+  params: { jsPageId: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-  //on rendering of this page
-  useEffect(
-    function () {
-      // filtering data
-      const filteredData = sidenavlist_js.filter(
-        (each) => each.label === params.jsPageId
-      );
-      const gotData = filteredData[0].data();
-      //saving data into local state
-      setData(gotData);
-    },
-    //injecting dependency
-    [params.jsPageId]
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const title = await new Promise((resolve) => {
+    setTimeout(() => {
+      return resolve(params.jsPageId);
+    }, 100);
+  });
+  return {
+    title: `JavaScript-${title}`,
+  };
+};
+
+function JsPage({ params, searchParams }: Props) {
+  // filtering data
+  const filteredData = sidenavlist_js.filter(
+    (each) => each.label === params.jsPageId
   );
+  const data = filteredData[0].data();
 
   return (
     <div>
@@ -28,6 +33,6 @@ const DetailsPage = ({ params }: { params: JsPageProps }) => {
       <p>{data?.description}</p>
     </div>
   );
-};
+}
 
-export default DetailsPage;
+export default JsPage;

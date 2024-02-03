@@ -1,7 +1,7 @@
 import React from "react";
 
 function AuthLayout({ children }: { children: React.ReactNode }) {
-  return <main className="p-4">{children}</main>;
+  return <div className="p-4">{children}</div>;
 }
 
 export default AuthLayout;

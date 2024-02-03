@@ -5,7 +5,6 @@ import "./theme-config.css";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Theme } from "@radix-ui/themes";
-import Sidenav from "./components/Sidenav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,7 +13,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Progwired",
+  title: {
+    default: "Progwired",
+    template: "%s | PW",
+  },
   description: "Learn the coding!",
 };
 
@@ -25,6 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full bg-white light">
+      <head>
+        <link rel="icon" href="./favicon.ico" />
+      </head>
       <body className="h-full">
         <Theme appearance="light" accentColor="blue">
           <Navbar />

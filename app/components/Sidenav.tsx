@@ -10,10 +10,24 @@ function Sidenav() {
           <li key={each.id}>
             <Link
               href={each.href}
-              className="px-4 py-2 flex border-b border-r capitalize"
+              className="px-4 py-2 flex border-b border-r uppercase"
             >
               {each.label}
             </Link>
+            {each.data && (
+              <ul>
+                {each.data.map((t) => (
+                  <li key={t.id}>
+                    <Link
+                      href={t.href}
+                      className="px-4 py-2 flex border-b border-r capitalize"
+                    >
+                      {t.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

@@ -1,14 +1,15 @@
-import jsAdvantages from "./js/advantages";
-import jsHistory from "./js/history";
-import jsName from "./js/name";
-import jsPurpose from "./js/purpose";
+import { jsIntroduction } from "./js/introduction";
 
 export interface SidenavProps {
   id: string;
-  segment: string;
   label: string;
-  href: string;
-  data: () => SidenavDataProps;
+  data: {
+    id: string;
+    segment: string;
+    label: string;
+    href: string;
+    data: SidenavDataProps;
+  }[];
 }
 
 export interface SidenavDataProps {
@@ -18,32 +19,22 @@ export interface SidenavDataProps {
 
 const sidenavlist_js = [
   {
-    id: "js-name",
-    segment: "js",
-    label: "name",
-    href: "/js/name",
-    data: jsName,
+    id: "js-introduction",
+    label: "introduction",
+    href: "/js/introduction",
+    data: jsIntroduction,
   },
   {
-    id: "js-purpose",
-    segment: "js",
-    label: "purpose",
-    href: "/js/purpose",
-    data: jsPurpose,
+    id: "js-runtime",
+    label: "runtime",
+    href: "/js/runtime",
+    data: null,
   },
   {
-    id: "js-history",
-    segment: "js",
-    label: "history",
-    href: "/js/history",
-    data: jsHistory,
-  },
-  {
-    id: "js-advantages",
-    segment: "js",
-    label: "advantages",
-    href: "/js/advantages",
-    data: jsAdvantages,
+    id: "js-language",
+    label: "language",
+    href: "/js/language",
+    data: null,
   },
 ];
 

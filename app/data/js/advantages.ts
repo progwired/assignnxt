@@ -1,7 +1,6 @@
-export default function jsAdvantages() {
-  return {
-    title: "Advantages of JavaScript",
-    description: `ADVANTAGES: 
+export const jsAdvantages = {
+  title: "Advantages of JavaScript",
+  description: `ADVANTAGES: 
     JavaScript, a versatile and dynamic programming language, holds a paramount position in modern web development, offering a myriad of advantages that contribute to its widespread adoption and success. Here are some key advantages of JavaScript:
 
 1. **Client-Side Interactivity:**
@@ -35,5 +34,4 @@ export default function jsAdvantages() {
     JavaScript is continuously evolving, with regular updates and additions to the language. This commitment to improvement ensures that developers have access to the latest features, security enhancements, and performance optimizations.
 
 In conclusion, JavaScript's versatility, ease of use, and extensive ecosystem make it an indispensable tool for web developers, empowering them to create dynamic, interactive, and scalable applications for the modern digital landscape.`,
-  };
-}
+};
